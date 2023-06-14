@@ -7,7 +7,7 @@ on:
     paths:
       - 'sgcmapi/**'
 jobs:
-  build:
+  build_1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,9 +18,9 @@ jobs:
           distribution: 'temurin'
       - name: Maven Compile
         working-directory: sgcmapi/
-        run: mvn compile test
+        run: mvn compile
         
-  build2:
+  build_2:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
@@ -31,4 +31,4 @@ jobs:
             distribution: 'temurin'
         - name: Maven Test
           working-directory: sgcmapi/
-          run: mvn compile test
+          run: mvn test
