@@ -7,7 +7,7 @@ on:
     paths:
       - 'sgcmapi/**'
 jobs:
-  build_1:
+  compile:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,7 +20,8 @@ jobs:
         working-directory: sgcmapi/
         run: mvn compile
         
-  build_2:
+  test:
+      needs: compile
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
